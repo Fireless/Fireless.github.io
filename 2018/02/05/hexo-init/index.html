@@ -10,6 +10,10 @@
 
     <!--Description-->
     
+        <meta name="description" content="关于hexo静态博客搭建有很多人是利用hexo搭建个人博客的，目前网上关于hexo博客搭建的技术文档也很多，在此附上一篇比较优质的关于hexo博客搭建的文章：
+友情链接：https://ninghao.net/blog/1412
+hexo init的问题由于hexo的静态博客大多数部署于github">
+    
 
     <!--Author-->
     
@@ -18,7 +22,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Space"/>
+        <meta property="og:title" content="解决Windows 7下hexo init速度过慢问题"/>
     
 
     <!--Open Graph Description-->
@@ -29,7 +33,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -40,7 +44,7 @@
 
     <!-- Title -->
     
-    <title>CNAME - Space</title>
+    <title>解决Windows 7下hexo init速度过慢问题 - Space</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
@@ -121,9 +125,7 @@
 <div class="container">
 
     <!-- Main Content -->
-    
-
-<div class="row">
+    <div class="row">
     <div class="col-sm-12">
 
         <!--Title and Logo-->
@@ -131,25 +133,145 @@
     <div class="logo">
         <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
         
-            <h1 id="main-title" class="title">#CNAME</h1>
-        
     </div>
 </header>
 
-        <section class="main archive-container">
+        <section class="main">
             
-                <div class="archive-post">
-    <a href="/2018/02/05/ssh-config/">
-        <span class="archive-date">
-            Feb 2018
-        </span>
-        利用ssh将本地项目部署至github
-    </a>
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2018/02/05/hexo-init/">
+                解决Windows 7下hexo init速度过慢问题
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2018-02-05</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/bolg/">bolg</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <h1 id="关于hexo静态博客搭建"><a href="#关于hexo静态博客搭建" class="headerlink" title="关于hexo静态博客搭建"></a>关于hexo静态博客搭建</h1><p>有很多人是利用hexo搭建个人博客的，目前网上关于hexo博客搭建的技术文档也很多，在此附上一篇比较优质的关于hexo博客搭建的文章：</p>
+<p>友情链接：<a href="https://ninghao.net/blog/1412" target="_blank" rel="noopener">https://ninghao.net/blog/1412</a></p>
+<h1 id="hexo-init的问题"><a href="#hexo-init的问题" class="headerlink" title="hexo init的问题"></a>hexo init的问题</h1><p>由于hexo的静态博客大多数部署于github或者heroku这些外网上，我们在通过hexo init命令下载远程资源是经常会出现速度过慢，甚至到无法下载，停滞于20%·30%完成度的情况。</p>
+<p>在没有vpn的情况下，我也被这种情况困扰很久，最后在一个国外论坛上找到了解决方法。首先贴出我的hexo版本及其他组件版本：</p>
+<p><img src="https://i.imgur.com/UufHE04.png" alt=""></p>
+<p>如果配置相同，解决此问题，只需要在windos下利用cmd,ping  github.com。只要收到github站点的反馈，重启git bash，再进行hexo init就可以顺利进行。</p>
+<p><img src="https://i.imgur.com/w4XFF2k.png" alt=""></p>
+<h1 id="config-yml-文件配置"><a href="#config-yml-文件配置" class="headerlink" title="_config.yml 文件配置"></a>_config.yml 文件配置</h1><p>最后附上我博客配置文件的具体代码</p>
+<pre><code># Site
+title: Space
+subtitle:
+description:
+author: John Doe
+language:
+timezone:
+
+# URL
+## If your site is put in a subdirectory, set url as &apos;http://yoursite.com/child&apos; and root as &apos;/child/&apos;
+url: http://yoursite.com
+root: /
+permalink: :year/:month/:day/:title/
+permalink_defaults:
+
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+
+# Writing
+new_post_name: :title.md # File name of new posts
+default_layout: post
+titlecase: false # Transform title into titlecase
+external_link: true # Open external links in new tab
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: false
+  tab_replace:
+
+# Home page setting
+# path: Root path for your blogs index page. (default = &apos;&apos;)
+# per_page: Posts displayed per page. (0 = disable pagination)
+# order_by: Posts order. (Order by date descending by default)
+index_generator:
+  path: &apos;&apos;
+  per_page: 10
+  order_by: -date
+
+# Category &amp; Tag
+default_category: uncategorized
+category_map:
+tag_map:
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+
+# Pagination
+## Set per_page to 0 to disable pagination
+per_page: 10
+pagination_dir: page
+
+# Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+theme: alpha
+
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type: git
+  repository: git@github.com:Fireless/Fireless.github.io.git
+   branch: master
+</code></pre>
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/2018/">#2018</a> <a href="/tags/hexo-init/">#hexo init</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
 </div>
-            
         </section>
+
     </div>
 </div>
+
 
 </div>
 

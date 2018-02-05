@@ -10,6 +10,9 @@
 
     <!--Description-->
     
+        <meta name="description" content="背景：准备利用hexo + Github搭建自己的个人博客，在本地项目基本完成后，需要将本地项目利用ssh部署至Github仓库。
+一、ssh的获取及配置1.首先需要hexo，git bash 等软件，具体下载安装步骤网上很多，此处不赘述。2.利用git bash获取本地和公共密匙   获取命令为 ">
+    
 
     <!--Author-->
     
@@ -18,7 +21,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Space"/>
+        <meta property="og:title" content="利用ssh将本地项目部署至github"/>
     
 
     <!--Open Graph Description-->
@@ -29,7 +32,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -40,7 +43,7 @@
 
     <!-- Title -->
     
-    <title>Space</title>
+    <title>利用ssh将本地项目部署至github - Space</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
@@ -129,17 +132,14 @@
     <div class="logo">
         <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
         
-            <h1 id="main-title" class="title">Space</h1>
-        
     </div>
 </header>
 
         <section class="main">
             
-                
 <div class="post">
 
-    <div class="post-header index">
+    <div class="post-header">
         <h1 class="title">
             <a href="/2018/02/05/ssh-config/">
                 利用ssh将本地项目部署至github
@@ -158,9 +158,13 @@
         </div>
     </div>
 
-    
-        <div class="content">
-            <p><strong>背景：</strong>准备利用hexo + Github搭建自己的个人博客，在本地项目基本完成后，需要将本地项目利用ssh部署至Github仓库。</p>
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <p><strong>背景：</strong>准备利用hexo + Github搭建自己的个人博客，在本地项目基本完成后，需要将本地项目利用ssh部署至Github仓库。</p>
 <h2 id="一、ssh的获取及配置"><a href="#一、ssh的获取及配置" class="headerlink" title="一、ssh的获取及配置"></a>一、ssh的获取及配置</h2><h3 id="1-首先需要hexo，git-bash-等软件，具体下载安装步骤网上很多，此处不赘述。"><a href="#1-首先需要hexo，git-bash-等软件，具体下载安装步骤网上很多，此处不赘述。" class="headerlink" title="1.首先需要hexo，git bash 等软件，具体下载安装步骤网上很多，此处不赘述。"></a>1.首先需要hexo，git bash 等软件，具体下载安装步骤网上很多，此处不赘述。</h3><h3 id="2-利用git-bash获取本地和公共密匙"><a href="#2-利用git-bash获取本地和公共密匙" class="headerlink" title="2.利用git bash获取本地和公共密匙"></a>2.利用git bash获取本地和公共密匙</h3><p>   获取命令为    <code>ssh-keygen -t rsa -C &quot;个人邮箱&quot;</code>,结果如下：<br>    <img src="https://i.imgur.com/74c2hgj.png" alt=""><br>注意此处会让你填写密匙生成地址和访问密码，若不设置，以后不用输密码直接访问，一路按enter即可。</p>
 <h3 id="3-查看密匙并提交至github"><a href="#3-查看密匙并提交至github" class="headerlink" title="3.查看密匙并提交至github"></a>3.查看密匙并提交至github</h3><p>   密匙文件夹的一般路径为~/.ssh</p>
 <p><img src="https://i.imgur.com/nU6gJUw.png" alt=""></p>
@@ -182,48 +186,25 @@ and the repository exists.</code></p>
 <h2 id="三、关于CNAME文件的问题"><a href="#三、关于CNAME文件的问题" class="headerlink" title="三、关于CNAME文件的问题"></a>三、关于CNAME文件的问题</h2><p>hexo deploy时遇到每次部署CNAME文件都会被自动清除导致网页无法显示的问题。此时只要将CNAME文件放在source文件夹下再 hexo g 就可以避免这个问题。readme文件同理。</p>
 <p>希望本文对你有所帮助。</p>
 
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2018/02/04/hello-world/">
-                Nothing is true , everything is premitted
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2018-02-04</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/assassin/">assassin</a>
-                </span>
-            
-        </div>
     </div>
 
     
-        <div class="content">
-            <h2 id="Welcome-to-my-SPACE"><a href="#Welcome-to-my-SPACE" class="headerlink" title=" Welcome to my SPACE"></a><center> Welcome to my SPACE</center></h2>
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/2018/">#2018</a> <a href="/tags/CNAME/">#CNAME</a>
         </div>
     
 
+    <!-- Comments -->
+    
+
 </div>
-            
         </section>
+
     </div>
 </div>
-
-
-
-
 
 
 </div>

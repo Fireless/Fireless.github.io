@@ -40,7 +40,7 @@
 
     <!-- Title -->
     
-    <title>Space</title>
+    <title>ssh - Space</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
@@ -121,7 +121,9 @@
 <div class="container">
 
     <!-- Main Content -->
-    <div class="row">
+    
+
+<div class="row">
     <div class="col-sm-12">
 
         <!--Title and Logo-->
@@ -129,102 +131,25 @@
     <div class="logo">
         <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
         
-            <h1 id="main-title" class="title">Space</h1>
+            <h1 id="main-title" class="title">ssh</h1>
         
     </div>
 </header>
 
-        <section class="main">
+        <section class="main archive-container">
             
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2018/02/05/ssh-config/">
-                利用ssh将本地项目部署至github
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2018-02-05</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/ssh/">ssh</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <p><strong>背景：</strong>准备利用hexo + Github搭建自己的个人博客，在本地项目基本完成后，需要将本地项目利用ssh部署至Github仓库。</p>
-<h2 id="一、ssh的获取及配置"><a href="#一、ssh的获取及配置" class="headerlink" title="一、ssh的获取及配置"></a>一、ssh的获取及配置</h2><h3 id="1-首先需要hexo，git-bash-等软件，具体下载安装步骤网上很多，此处不赘述。"><a href="#1-首先需要hexo，git-bash-等软件，具体下载安装步骤网上很多，此处不赘述。" class="headerlink" title="1.首先需要hexo，git bash 等软件，具体下载安装步骤网上很多，此处不赘述。"></a>1.首先需要hexo，git bash 等软件，具体下载安装步骤网上很多，此处不赘述。</h3><h3 id="2-利用git-bash获取本地和公共密匙"><a href="#2-利用git-bash获取本地和公共密匙" class="headerlink" title="2.利用git bash获取本地和公共密匙"></a>2.利用git bash获取本地和公共密匙</h3><p>   获取命令为    <code>ssh-keygen -t rsa -C &quot;个人邮箱&quot;</code>,结果如下：<br>    <img src="https://i.imgur.com/74c2hgj.png" alt=""><br>注意此处会让你填写密匙生成地址和访问密码，若不设置，以后不用输密码直接访问，一路按enter即可。</p>
-<h3 id="3-查看密匙并提交至github"><a href="#3-查看密匙并提交至github" class="headerlink" title="3.查看密匙并提交至github"></a>3.查看密匙并提交至github</h3><p>   密匙文件夹的一般路径为~/.ssh</p>
-<p><img src="https://i.imgur.com/nU6gJUw.png" alt=""></p>
-<p>用文本编辑软件打开id_rsa.pub（我用的是notepad），复制全部内容。即为SSHkey。</p>
-<p>打开github，在个人设置中将SSHkey添加至github账户。<br><img src="https://i.imgur.com/5mOKuVo.png" alt=""></p>
-<h3 id="4-检查链接是否成功建立"><a href="#4-检查链接是否成功建立" class="headerlink" title="4.检查链接是否成功建立"></a>4.检查链接是否成功建立</h3><p>输入<code>ssh -T git@github.com</code></p>
-<p><img src="https://i.imgur.com/uF5yWG5.png" alt=""><br>返回如图结果说明ssh配置已完成。</p>
-<h2 id="二、-config-yml文件修改的注意事项"><a href="#二、-config-yml文件修改的注意事项" class="headerlink" title="二、_config.yml文件修改的注意事项"></a>二、_config.yml文件修改的注意事项</h2><p>在hexo d的时候遇到了如下问题：</p>
-<p>  <code>Please make sure you have the correct access rights
-and the repository exists.</code></p>
-<p>首先确认sshkey的配置是否有误，如错误则删除sshkey，并重新配置，具体方法如本文第一节所述。如果配置真确，则大概率是_config.yml文件的问题。</p>
-<p>本地的配置主要是修改博客根目录下的_config.yml文件，再文件最后加上远程仓库地址的信息。</p>
-<p><img src="https://i.imgur.com/oYjRsNy.png" alt=""></p>
-<p>具体修改如上。<br>这里列举几点需要注意的细节：</p>
-<p>1、type类型为git ，而不是github。</p>
-<p>2、type，repository，branch后都必须有一个空格，否则无法识别。</p>
-<p>3、网上很多教程写仓库地址格式为<a href="https://github.com/***,https格式很多时候会出现错误，无法部署，这里我改成git@github.com" target="_blank" rel="noopener">https://github.com/***,https格式很多时候会出现错误，无法部署，这里我改成git@github.com</a>.</p>
-<p>确认_config.yml文件无误后，就可以通过hexo generate，hexo deploy进行部署。</p>
-<h2 id="三、关于CNAME文件的问题"><a href="#三、关于CNAME文件的问题" class="headerlink" title="三、关于CNAME文件的问题"></a>三、关于CNAME文件的问题</h2><p>hexo deploy时遇到每次部署CNAME文件都会被自动清除导致网页无法显示的问题。此时只要将CNAME文件放在source文件夹下再 hexo g 就可以避免这个问题。readme文件同理。</p>
-<p>希望本文对你有所帮助。</p>
-
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2018/02/04/hello-world/">
-                Nothing is true , everything is premitted
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2018-02-04</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/assassin/">assassin</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <h2 id="Welcome-to-my-SPACE"><a href="#Welcome-to-my-SPACE" class="headerlink" title=" Welcome to my SPACE"></a><center> Welcome to my SPACE</center></h2>
-        </div>
-    
-
+                <div class="archive-post">
+    <a href="/2018/02/05/ssh-config/">
+        <span class="archive-date">
+            Feb 2018
+        </span>
+        利用ssh将本地项目部署至github
+    </a>
 </div>
             
         </section>
     </div>
 </div>
-
-
-
-
-
 
 </div>
 

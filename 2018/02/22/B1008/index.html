@@ -10,6 +10,8 @@
 
     <!--Description-->
     
+        <meta name="description" content="数组元素循环右移问题一个数组A中存有N（N&amp;gt;0）个整数，在不允许使用另外数组的前提下，将每个整数循环向右移M（M&amp;gt;=0）个位置，即将A中的数据由（A0 A1……AN-1）变换为（AN-M …… AN-1 A0 A1……AN-M-1）（最后M个数循环移至最前面的M个位置）。如果需要考虑程序移动数据的次数尽量少，要如何设计移动的方法？">
+    
 
     <!--Author-->
     
@@ -18,7 +20,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="categories"/>
+        <meta property="og:title" content="PAT B1008"/>
     
 
     <!--Open Graph Description-->
@@ -40,7 +42,7 @@
 
     <!-- Title -->
     
-    <title>categories - Space</title>
+    <title>PAT B1008 - Space</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
@@ -125,55 +127,68 @@
     <div class="col-sm-12">
 
         <!--Title and Logo-->
-        
-            <header>
+        <header>
     <div class="logo">
-        <a href="/"><i class="logo-icon fa fa-folder-open" aria-hidden="true"></i></a>
-        
-            <h1 id="main-title" class="title">categories</h1>
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
         
     </div>
 </header>
-            <section class="main archive-container">
-                
-                        <div class="archive-post">
-    <a href="/categories/DNS/">
-        DNS
-    </a>
-</div>
-                
-                        <div class="archive-post">
-    <a href="/categories/Bolg/">
-        Bolg
-    </a>
-</div>
-                
-                        <div class="archive-post">
-    <a href="/categories/Python/">
-        Python
-    </a>
-</div>
-                
-                        <div class="archive-post">
-    <a href="/categories/assassin/">
-        assassin
-    </a>
-</div>
-                
-                        <div class="archive-post">
-    <a href="/categories/Blog/">
-        Blog
-    </a>
-</div>
-                
-                        <div class="archive-post">
-    <a href="/categories/PAT/">
-        PAT
-    </a>
-</div>
-                
-            </section>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2018/02/22/B1008/">
+                PAT B1008
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2018-02-22</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/PAT/">PAT</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
         
+
+        <!-- Post Content -->
+        <h1 id="数组元素循环右移问题"><a href="#数组元素循环右移问题" class="headerlink" title="数组元素循环右移问题"></a>数组元素循环右移问题</h1><p>一个数组A中存有N（N&gt;0）个整数，在不允许使用另外数组的前提下，将每个整数循环向右移M（M&gt;=0）个位置，即将A中的数据由（A0 A1……AN-1）变换为（AN-M …… AN-1 A0 A1……AN-M-1）（最后M个数循环移至最前面的M个位置）。如果需要考虑程序移动数据的次数尽量少，要如何设计移动的方法？</p>
+<a id="more"></a>
+<p><strong>输入格式</strong>：每个输入包含一个测试用例，第1行输入N ( 1&lt;=N&lt;=100)、M（M&gt;=0）；第2行输入N个整数，之间用空格分隔。</p>
+<p><strong>输出格式</strong>：在一行中输出循环右移M位以后的整数序列，之间用空格分隔，序列结尾不能有多余空格。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> A[<span class="number">110</span>];</span><br><span class="line">	<span class="keyword">int</span> n,m,count=<span class="number">0</span>;</span><br><span class="line">		</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d %d"</span>,&amp;n,&amp;m);</span><br><span class="line">	m = m % n;</span><br><span class="line"></span><br><span class="line">  	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; n;i++)&#123;</span><br><span class="line">  		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;A[i]);</span><br><span class="line">  	&#125;</span><br><span class="line"></span><br><span class="line">  	<span class="keyword">for</span> (<span class="keyword">int</span> i = n-m;i &lt;n;i++)&#123;</span><br><span class="line">  		<span class="built_in">printf</span>(<span class="string">"%d"</span>,A[i] );</span><br><span class="line">  		count++;</span><br><span class="line">  		<span class="keyword">if</span>(count &lt; n) <span class="built_in">printf</span>(<span class="string">" "</span>);</span><br><span class="line">  	&#125;</span><br><span class="line"></span><br><span class="line">  	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n-m; i++)</span><br><span class="line">  	&#123;</span><br><span class="line">  		<span class="built_in">printf</span>(<span class="string">"%d"</span>,A[i] );</span><br><span class="line">  		count++;</span><br><span class="line">  		<span class="keyword">if</span> (count &lt; n) <span class="built_in">printf</span>(<span class="string">" "</span>); </span><br><span class="line">  	&#125;</span><br><span class="line">	</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips:"></a>Tips:</h2><p>1.注意题干中N的范围，数组取值应稍大于N范围，此处去A[110]，防止个别样例无法通过。</p>
+<p>2.关于空格的要求。若要求结尾不输出空格，可以考虑设置count为输出位数计数。count == n时不输出。</p>
+<p>3.关于数组的取值，输出的循环用<strong>For</strong>比较合适，While（T–）的形式会取不到A[0],浪费空间。</p>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/2018/">#2018</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
     </div>
 </div>
 

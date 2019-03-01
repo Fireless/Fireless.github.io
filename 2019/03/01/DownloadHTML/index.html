@@ -10,7 +10,7 @@
 
     <!--Description-->
     
-        <meta name="description" content="Python简介Python是目前使用频率最高的编程语言，其最大特点就是import，可以通过导入各种现成的库，实现各种所需功能，相比于Java可以大大提高项目完成的速度。（这里不讨论项目十分复杂，需要二三十人甚至更大规模团队开发的情况。就新人小白而言，Python确实更加友好）。只需要学习各种 相关的库，加以引用就可以实现编程。而作为一种开源的语言，目前Python库种类非常丰富，涵盖各行各业，Google的搜索引擎，YouTube上视频的爬取，目前大火的数据分析，人工智能都可以用到Python。">
+        <meta name="description" content="简介Requests是唯一一个第三方的非转基因Http python库，本文主要利用Requests库对网页的HTML文件进行下载。">
     
 
     <!--Author-->
@@ -20,7 +20,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Python学习笔记1：环境配置"/>
+        <meta property="og:title" content="Python学习笔记2:网页的获取"/>
     
 
     <!--Open Graph Description-->
@@ -42,7 +42,7 @@
 
     <!-- Title -->
     
-    <title>Python学习笔记1：环境配置 - Space</title>
+    <title>Python学习笔记2:网页的获取 - Space</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
@@ -146,13 +146,13 @@
 
     <div class="post-header">
         <h1 class="title">
-            <a href="/2018/02/06/Python1/">
-                Python学习笔记1：环境配置
+            <a href="/2019/03/01/DownloadHTML/">
+                Python学习笔记2:网页的获取
             </a>
         </h1>
         <div class="post-info">
             
-                <span class="date">2018-02-06</span>
+                <span class="date">2019-03-01</span>
             
             
             
@@ -169,21 +169,33 @@
         
 
         <!-- Post Content -->
-        <h1 id="Python简介"><a href="#Python简介" class="headerlink" title="Python简介"></a>Python简介</h1><p>Python是目前使用频率最高的编程语言，其最大特点就是<strong>import</strong>，可以通过导入各种现成的库，实现各种所需功能，相比于Java可以大大提高项目完成的速度。（这里不讨论项目十分复杂，需要二三十人甚至更大规模团队开发的情况。就新人小白而言，Python确实更加友好）。只需要学习各种 相关的库，加以引用就可以实现编程。而作为一种开源的语言，目前Python库种类非常丰富，涵盖各行各业，Google的搜索引擎，YouTube上视频的爬取，目前大火的数据分析，人工智能都可以用到Python。<br> <a id="more"></a> </p>
-<h1 id="Python环境配置"><a href="#Python环境配置" class="headerlink" title="Python环境配置"></a>Python环境配置</h1><h2 id="1、版本选择"><a href="#1、版本选择" class="headerlink" title="1、版本选择"></a>1、版本选择</h2><p>目前Python有2和3两个版本同时存在。虽然说Python 3已经基本趋于成熟，但还有不少企业、项目仍在使用Python 2。而Python官方虽然说过2020年将停止维护Python 2，但真实性尤未可知（之前他们就说过2014年全面下线Python 2，但之后发布公告称由于工作量巨大，暂缓下线，结果到现在Python 2还是很火，orz）。关于两个版本的优劣在此不做评价。选择自己需要的即可，两者语法上只有很小区别，适应另一个版本的时间不需要太久。我选择了Windows下的Python 3进行安装。</p>
-<h2 id="2、下载并安装"><a href="#2、下载并安装" class="headerlink" title="2、下载并安装"></a>2、下载并安装</h2><p>Python 的安装包可以直接去官网下载，支持Linux，mac OS，Windows，可根据自己的情况选择版本。</p>
-<p>Python官网：<a href="https://www.python.org/" target="_blank" rel="noopener">https://www.python.org/</a></p>
-<p><img src="https://i.imgur.com/teiSmqM.png" alt=""></p>
-<p>在安装时需要注意的一点，勾选add Python to PATH的选项，这样安装时会自动帮你配置环境变量。如果忘记勾选，需要自行配置环境变量。具体步骤为 ：打开我的电脑–属性–高级系统设置–环境变量–系统变量,在PATH条目最后自行添加Python的环境变量。其他设置全选默认直接下一步即可。</p>
-<p><img src="https://i.imgur.com/Oz9JDrE.png" alt=""></p>
-<p>安装完成后可利用cmd查看是否配置成功，此处看到我的版本号为3.6.4</p>
-<p><img src="https://i.imgur.com/DAxtZZ2.png" alt=""></p>
-<h1 id="测试Python交互界面"><a href="#测试Python交互界面" class="headerlink" title="测试Python交互界面"></a>测试Python交互界面</h1><p>本文利用一个简单的小程序测试Python交互界面能否顺利运行。首先通过菜单打开IDLE，呼出Python交互界面。</p>
-<p><img src="https://i.imgur.com/JYVRKv1.png" alt=""></p>
-<p>通过调用turtle库绘制一个简单的五角星。代码及运行效果如下：</p>
-<p><img src="https://i.imgur.com/pwGinBZ.png" alt=""></p>
-<p>turtle库为一个Python自带的图形绘制库，可以用于一般的图形绘制。更多功能参考turtle库的具体手册。</p>
-<p>Python中文官方文档：<a href="http://python.usyiyi.cn/" target="_blank" rel="noopener">http://python.usyiyi.cn/</a></p>
+        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>Requests是唯一一个第三方的非转基因Http python库，本文主要利用Requests库对网页的HTML文件进行下载。<br><a id="more"></a></p>
+<h1 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a>具体步骤</h1><h2 id="安装requests模块"><a href="#安装requests模块" class="headerlink" title="安装requests模块"></a>安装requests模块</h2><p>安装指令为pip3 install requests,如无法安装则需要以管理员权限运行。<br><img src="https://i.imgur.com/KRTv7XB.png" alt=""></p>
+<h2 id="python3代码"><a href="#python3代码" class="headerlink" title="python3代码"></a>python3代码</h2><pre><code>#!/usr/bin/env python3
+import requests
+
+def download(url):
+
+#检查URL是否存在
+try:
+    req = requests.get(url)
+except requests.exceptions.MissingSchema:
+    print(&apos;Invalid URL &quot;{}&quot;&apos;.format(url))
+    return
+#检查是否成功访问了网站
+if req.status_code == 403:
+    print(&apos;You do not have the authority to this page&apos;)
+    return
+
+filename = url.split(&apos;/&apos;)[-1]
+with open(filename,&apos;w&apos;) as fobj:
+    fobj.write(req.content.decode(&apos;utf-8&apos;))
+print(&quot;Download over.&quot;)
+
+if __name__ == &apos;__main__&apos;:
+    url = input(&apos;Enter a URL: &apos;)
+    download(url)
+</code></pre><p>运行后将在当前目录自动生成文件夹并进行下载。<br><img src="https://i.imgur.com/akRX80i.png" alt=""></p>
 
     </div>
 
@@ -192,7 +204,7 @@
     
         <div class="post-tags">
             <i class="fa fa-tags" aria-hidden="true"></i>
-            <a href="/tags/2018/">#2018</a>
+            <a href="/tags/2019/">#2019</a>
         </div>
     
 

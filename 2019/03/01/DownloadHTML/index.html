@@ -171,31 +171,8 @@
         <!-- Post Content -->
         <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>Requests是唯一一个第三方的非转基因Http python库，本文主要利用Requests库对网页的HTML文件进行下载。<br><a id="more"></a></p>
 <h1 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a>具体步骤</h1><h2 id="安装requests模块"><a href="#安装requests模块" class="headerlink" title="安装requests模块"></a>安装requests模块</h2><p>安装指令为pip3 install requests,如无法安装则需要以管理员权限运行。<br><img src="https://i.imgur.com/KRTv7XB.png" alt=""></p>
-<h2 id="python3代码"><a href="#python3代码" class="headerlink" title="python3代码"></a>python3代码</h2><pre><code>#!/usr/bin/env python3
-import requests
-
-def download(url):
-
-#检查URL是否存在
-try:
-    req = requests.get(url)
-except requests.exceptions.MissingSchema:
-    print(&apos;Invalid URL &quot;{}&quot;&apos;.format(url))
-    return
-#检查是否成功访问了网站
-if req.status_code == 403:
-    print(&apos;You do not have the authority to this page&apos;)
-    return
-
-filename = url.split(&apos;/&apos;)[-1]
-with open(filename,&apos;w&apos;) as fobj:
-    fobj.write(req.content.decode(&apos;utf-8&apos;))
-print(&quot;Download over.&quot;)
-
-if __name__ == &apos;__main__&apos;:
-    url = input(&apos;Enter a URL: &apos;)
-    download(url)
-</code></pre><p>运行后将在当前目录自动生成文件夹并进行下载。<br><img src="https://i.imgur.com/akRX80i.png" alt=""></p>
+<h2 id="python3代码"><a href="#python3代码" class="headerlink" title="python3代码"></a>python3代码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">download</span><span class="params">(url)</span>:</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#检查URL是否存在</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">	req = requests.get(url)</span><br><span class="line"><span class="keyword">except</span> requests.exceptions.MissingSchema:</span><br><span class="line">	print(<span class="string">'Invalid URL "&#123;&#125;"'</span>.format(url))</span><br><span class="line">	<span class="keyword">return</span></span><br><span class="line"><span class="comment">#检查是否成功访问了网站</span></span><br><span class="line"><span class="keyword">if</span> req.status_code == <span class="number">403</span>:</span><br><span class="line">	print(<span class="string">'You do not have the authority to this page'</span>)</span><br><span class="line">	<span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">filename = url.split(<span class="string">'/'</span>)[<span class="number">-1</span>]</span><br><span class="line"><span class="keyword">with</span> open(filename,<span class="string">'w'</span>) <span class="keyword">as</span> fobj:</span><br><span class="line">	fobj.write(req.content.decode(<span class="string">'utf-8'</span>))</span><br><span class="line">print(<span class="string">"Download over."</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">	url = input(<span class="string">'Enter a URL: '</span>)</span><br><span class="line">	download(url)</span><br></pre></td></tr></table></figure>
+<p>运行后将在当前目录自动生成文件夹并进行下载。<br><img src="https://i.imgur.com/akRX80i.png" alt=""></p>
 
     </div>
 
@@ -264,11 +241,7 @@ if __name__ == &apos;__main__&apos;:
     <ul>
         
         <li>
-            <a class="footer-post" href="/categories/Blog/">Blog</a>
-        </li>
-        
-        <li>
-            <a class="footer-post" href="/categories/assassin/">assassin</a>
+            <a class="footer-post" href="/categories/PAT/">PAT</a>
         </li>
         
         <li>
@@ -276,7 +249,11 @@ if __name__ == &apos;__main__&apos;:
         </li>
         
         <li>
-            <a class="footer-post" href="/categories/Bolg/">Bolg</a>
+            <a class="footer-post" href="/categories/DNS/">DNS</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/categories/assassin/">assassin</a>
         </li>
         
     </ul>

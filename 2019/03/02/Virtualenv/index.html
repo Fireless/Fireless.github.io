@@ -10,6 +10,8 @@
 
     <!--Description-->
     
+        <meta name="description" content="virtualenvvirtualenv提供了python项目工作的虚拟环境，其功能类似于虚拟机。主要优势在于可以防止不同项目之间的干扰。可以根据不同项目的需要，在virtualenv创建的环境中安装不同的库，为项目服务。">
+    
 
     <!--Author-->
     
@@ -18,7 +20,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="categories"/>
+        <meta property="og:title" content="Python学习笔记3：virtualenv的搭建"/>
     
 
     <!--Open Graph Description-->
@@ -40,7 +42,7 @@
 
     <!-- Title -->
     
-    <title>categories - Space</title>
+    <title>Python学习笔记3：virtualenv的搭建 - Space</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
@@ -131,67 +133,68 @@
     <div class="col-sm-12">
 
         <!--Title and Logo-->
-        
-            <header>
+        <header>
     <div class="logo">
-        <a href="/"><i class="logo-icon fa fa-folder-open" aria-hidden="true"></i></a>
-        
-            <h1 id="main-title" class="title">categories</h1>
+        <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
         
     </div>
 </header>
-            <section class="main archive-container">
-                
-                        <div class="archive-post">
-    <a href="/categories/Python/">
-        Python
-    </a>
-</div>
-                
-                        <div class="archive-post">
-    <a href="/categories/Some-thinking/">
-        Some thinking
-    </a>
-</div>
-                
-                        <div class="archive-post">
-    <a href="/categories/PAT/">
-        PAT
-    </a>
-</div>
-                
-                        <div class="archive-post">
-    <a href="/categories/assassin/">
-        assassin
-    </a>
-</div>
-                
-                        <div class="archive-post">
-    <a href="/categories/Bolg/">
-        Bolg
-    </a>
-</div>
-                
-                        <div class="archive-post">
-    <a href="/categories/Blog/">
-        Blog
-    </a>
-</div>
-                
-                        <div class="archive-post">
-    <a href="/categories/Daily/">
-        Daily
-    </a>
-</div>
-                
-                        <div class="archive-post">
-    <a href="/categories/DNS/">
-        DNS
-    </a>
-</div>
-                
-            </section>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2019/03/02/Virtualenv/">
+                Python学习笔记3：virtualenv的搭建
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-03-02</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/Python/">Python</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
         
+
+        <!-- Post Content -->
+        <h1 id="virtualenv"><a href="#virtualenv" class="headerlink" title="virtualenv"></a>virtualenv</h1><p>virtualenv提供了python项目工作的虚拟环境，其功能类似于虚拟机。主要优势在于可以防止不同项目之间的干扰。可以根据不同项目的需要，在virtualenv创建的环境中安装不同的库，为项目服务。<br><a id="more"></a></p>
+<h2 id="安装virtualenv"><a href="#安装virtualenv" class="headerlink" title="安装virtualenv"></a>安装virtualenv</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install virtualenv</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.imgur.com/FlJGID7.png" alt=""></p>
+<h2 id="利用virtualenv创建虚拟环境"><a href="#利用virtualenv创建虚拟环境" class="headerlink" title="利用virtualenv创建虚拟环境"></a>利用virtualenv创建虚拟环境</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">virtualenv virt1_python3</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.imgur.com/1ac9tbd.png" alt=""></p>
+<h2 id="激活虚拟环境"><a href="#激活虚拟环境" class="headerlink" title="激活虚拟环境"></a>激活虚拟环境</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source virt1_python3/Scripts/activate</span><br></pre></td></tr></table></figure>
+<p><img src="https://i.imgur.com/wHEsPJh.png" alt=""></p>
+<p>括号内即为当前使用的环境，可以在这个环境中安装各种不同版本的库，退出当前环境只需输入deacticate。</p>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/2019/">#2019</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
     </div>
 </div>
 

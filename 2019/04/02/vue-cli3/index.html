@@ -10,6 +10,8 @@
 
     <!--Description-->
     
+        <meta name="description" content="简介：在使用vue-router的过程中，发现点击跳转按钮路由无反应，经过研究发现是因为标签的问题">
+    
 
     <!--Author-->
     
@@ -18,7 +20,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Space"/>
+        <meta property="og:title" content="vue学习笔记（三）--路由问题"/>
     
 
     <!--Open Graph Description-->
@@ -29,7 +31,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -40,7 +42,7 @@
 
     <!-- Title -->
     
-    <title>work - Space</title>
+    <title>vue学习笔记（三）--路由问题 - Space</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
@@ -127,9 +129,7 @@
 <div class="container">
 
     <!-- Main Content -->
-    
-
-<div class="row">
+    <div class="row">
     <div class="col-sm-12">
 
         <!--Title and Logo-->
@@ -137,43 +137,65 @@
     <div class="logo">
         <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
         
-            <h1 id="main-title" class="title">work</h1>
-        
     </div>
 </header>
 
-        <section class="main archive-container">
+        <section class="main">
             
-                <div class="archive-post">
-    <a href="/2019/04/02/vue-cli3/">
-        <span class="archive-date">
-            Apr 2019
-        </span>
-        vue学习笔记（三）--路由问题
-    </a>
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2019/04/02/vue-cli3/">
+                vue学习笔记（三）--路由问题
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-04-02</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/vue/">vue</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <h3 id="简介："><a href="#简介：" class="headerlink" title="简介："></a>简介：</h3><p>在使用vue-router的过程中，发现点击跳转按钮路由无反应，经过研究发现是因为<router-view>标签的问题<br><a id="more"></a></router-view></p>
+<h3 id="路由配置的主要步骤"><a href="#路由配置的主要步骤" class="headerlink" title="路由配置的主要步骤"></a>路由配置的主要步骤</h3><p><img src="https://i.imgur.com/pak6J2b.png" alt=""></p>
+<h4 id="1-首先需要引入vue-router，由于本项目是由vue-cli构建，在创建时已经选择了增加vue-router路由，所以此步骤省略。"><a href="#1-首先需要引入vue-router，由于本项目是由vue-cli构建，在创建时已经选择了增加vue-router路由，所以此步骤省略。" class="headerlink" title="1.首先需要引入vue-router，由于本项目是由vue-cli构建，在创建时已经选择了增加vue-router路由，所以此步骤省略。"></a>1.首先需要引入vue-router，由于本项目是由vue-cli构建，在创建时已经选择了增加vue-router路由，所以此步骤省略。</h4><h4 id="2-在main-js文件中引用router，并声明使用"><a href="#2-在main-js文件中引用router，并声明使用" class="headerlink" title="2.在main.js文件中引用router，并声明使用"></a>2.在main.js文件中引用router，并声明使用</h4> <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">import Vue from 'vue'</span><br><span class="line">import './plugins/vuetify'</span><br><span class="line">import App from './App'</span><br><span class="line">import router from './router'</span><br><span class="line">import Vuetify from 'vuetify'</span><br><span class="line">import '@mdi/font/css/materialdesignicons.css' </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Vue.use(Vuetify,&#123;</span><br><span class="line">  iconfont: 'mdi'</span><br><span class="line">&#125;)</span><br><span class="line">Vue.use(router)</span><br><span class="line"></span><br><span class="line">Vue.config.productionTip = false</span><br><span class="line"></span><br><span class="line">/* eslint-disable no-new */</span><br><span class="line">new Vue(&#123;</span><br><span class="line">  el: '#app',</span><br><span class="line">  router,</span><br><span class="line">  components: &#123; App &#125;,</span><br><span class="line">  template: '<span class="tag">&lt;<span class="name">App</span>/&gt;</span>'</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="3-配置路由文件-router-index-js"><a href="#3-配置路由文件-router-index-js" class="headerlink" title="3.配置路由文件/router/index.js"></a>3.配置路由文件/router/index.js</h4> <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">import Vue from 'vue'</span><br><span class="line">import Router from 'vue-router'</span><br><span class="line">import Home from '@/views/Home'</span><br><span class="line">import Menu from '@/views/Menu'</span><br><span class="line"></span><br><span class="line">Vue.use(Router)</span><br><span class="line"></span><br><span class="line">export default new Router(&#123;</span><br><span class="line">  routes: [</span><br><span class="line">&#123;</span><br><span class="line">  path: '/',</span><br><span class="line">  name: 'Home',</span><br><span class="line">  component: Home</span><br><span class="line">&#125;,</span><br><span class="line">&#123;</span><br><span class="line">  path: '/Menu',</span><br><span class="line">  name: 'Menu',</span><br><span class="line">  component: Menu</span><br><span class="line">&#125;]</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>此处需要注意先对相应组件进行注册,再进行路由的填写。</p>
+<h4 id="4-router-view"><a href="#4-router-view" class="headerlink" title="4.router-view"></a>4.router-view</h4><p>初次使用时路由一直无法正常渲染。发现是没有使用<router-view>的原因。该标签作用是渲染匹配的的路由。我理解为该标签所在的位置就是SPA页面跟随路由变化的那一部分。所以我在入口文件App.vue的template中只加了导航栏和<router-view></router-view>最终效果即为导航栏不变，而router-view部分随路由改变。</router-view></p>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/2019/">#2019</a> <a href="/tags/vue/">#vue</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
 </div>
-            
-                <div class="archive-post">
-    <a href="/2019/04/02/vue-cli2/">
-        <span class="archive-date">
-            Apr 2019
-        </span>
-        Vue学习笔记（二）--引入vuetify
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/2019/03/31/vue-cli1/">
-        <span class="archive-date">
-            Mar 2019
-        </span>
-        vue学习笔记（一）-- vue-cli构建项目脚手架
-    </a>
-</div>
-            
         </section>
+
     </div>
 </div>
+
 
 </div>
 

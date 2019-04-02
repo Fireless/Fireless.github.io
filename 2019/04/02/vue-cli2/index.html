@@ -10,6 +10,8 @@
 
     <!--Description-->
     
+        <meta name="description" content="简介：记录一些使用vue-cli构建项目后利用vuetify的组件编写页面时遇到的问题。">
+    
 
     <!--Author-->
     
@@ -18,7 +20,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Space"/>
+        <meta property="og:title" content="Vue学习笔记（二）--引入vuetify"/>
     
 
     <!--Open Graph Description-->
@@ -29,7 +31,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -40,7 +42,7 @@
 
     <!-- Title -->
     
-    <title>work - Space</title>
+    <title>Vue学习笔记（二）--引入vuetify - Space</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
@@ -127,9 +129,7 @@
 <div class="container">
 
     <!-- Main Content -->
-    
-
-<div class="row">
+    <div class="row">
     <div class="col-sm-12">
 
         <!--Title and Logo-->
@@ -137,43 +137,67 @@
     <div class="logo">
         <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
         
-            <h1 id="main-title" class="title">work</h1>
-        
     </div>
 </header>
 
-        <section class="main archive-container">
+        <section class="main">
             
-                <div class="archive-post">
-    <a href="/2019/04/02/vue-cli3/">
-        <span class="archive-date">
-            Apr 2019
-        </span>
-        vue学习笔记（三）--路由问题
-    </a>
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2019/04/02/vue-cli2/">
+                Vue学习笔记（二）--引入vuetify
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-04-02</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/vue/">vue</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <h3 id="简介："><a href="#简介：" class="headerlink" title="简介："></a>简介：</h3><p>记录一些使用vue-cli构建项目后利用vuetify的组件编写页面时遇到的问题。<br><a id="more"></a></p>
+<h4 id="1-引入vuetify"><a href="#1-引入vuetify" class="headerlink" title="1.引入vuetify"></a>1.引入vuetify</h4><p>在yarn add vuetify安装完vuetify，并且在main.js文件中引用vuetify后，vuetify组件任然无法正常显示。</p>
+<p><img src="https://i.imgur.com/uKU0eYl.png" alt=""></p>
+<p>只显示文本，并没有样式，所以猜测应该是没有成功引用。查阅官方文档后发现还需输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue add vuetify</span><br></pre></td></tr></table></figure>
+<p>生成vuetify.js文件之后才能正常使用vuetify。</p>
+<h4 id="2-根元素唯一"><a href="#2-根元素唯一" class="headerlink" title="2.根元素唯一"></a>2.根元素唯一</h4><p>root element only one，当出现两个根元素时，代码会报错，无法正常运行。此时理解了vuetify要求所有component都需要用<v-app></v-app>包裹的一个原因，这样做可以保证根元素的唯一性。</p>
+<h4 id="3-components内的问题"><a href="#3-components内的问题" class="headerlink" title="3.components内的问题"></a>3.components内<v-app>的问题</v-app></h4><p>由于一开始发现根元素不唯一无法运行，所以所有component都用了<v-app>。结果发现Home页面引用的组件只有一个能显示，其余组件失效。经过测试发现，如果Home页面引用的组件中有一个或多个<v-app>标签，只会显示第一个。故components内Vue文件改用<v-container>来保持其根元素的唯一性。在此之后发现页面能够正常显示。</v-container></v-app></v-app></p>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/2019/">#2019</a> <a href="/tags/vue/">#vue</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
 </div>
-            
-                <div class="archive-post">
-    <a href="/2019/04/02/vue-cli2/">
-        <span class="archive-date">
-            Apr 2019
-        </span>
-        Vue学习笔记（二）--引入vuetify
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/2019/03/31/vue-cli1/">
-        <span class="archive-date">
-            Mar 2019
-        </span>
-        vue学习笔记（一）-- vue-cli构建项目脚手架
-    </a>
-</div>
-            
         </section>
+
     </div>
 </div>
+
 
 </div>
 

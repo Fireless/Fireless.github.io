@@ -10,6 +10,8 @@
 
     <!--Description-->
     
+        <meta name="description" content="简介：this踩坑3h，再次记录一些vue的一些细节问题。">
+    
 
     <!--Author-->
     
@@ -18,7 +20,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Space"/>
+        <meta property="og:title" content="Vue-cli学习笔记（五）--this！"/>
     
 
     <!--Open Graph Description-->
@@ -29,7 +31,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -40,7 +42,7 @@
 
     <!-- Title -->
     
-    <title>assassin - Space</title>
+    <title>Vue-cli学习笔记（五）--this！ - Space</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
@@ -127,9 +129,7 @@
 <div class="container">
 
     <!-- Main Content -->
-    
-
-<div class="row">
+    <div class="row">
     <div class="col-sm-12">
 
         <!--Title and Logo-->
@@ -137,25 +137,76 @@
     <div class="logo">
         <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
         
-            <h1 id="main-title" class="title">assassin</h1>
-        
     </div>
 </header>
 
-        <section class="main archive-container">
+        <section class="main">
             
-                <div class="archive-post">
-    <a href="/2018/02/04/hello-world/">
-        <span class="archive-date">
-            Feb 2018
-        </span>
-        Nothing is true , everything is premitted
-    </a>
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2019/04/04/vue-cli5/">
+                Vue-cli学习笔记（五）--this！
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-04-04</span>
+            
+            
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <h3 id="简介："><a href="#简介：" class="headerlink" title="简介："></a>简介：</h3><p>this踩坑3h，再次记录一些vue的一些细节问题。<br><a id="more"></a></p>
+<h4 id="1-get请求动态参数问题参数"><a href="#1-get请求动态参数问题参数" class="headerlink" title="1.get请求动态参数问题参数"></a>1.get请求动态参数问题参数</h4><p>在重构Cnode社区时，需要在点击文章目录时跳转到详情页。此时如果要在一个文件内解决这个问题，就需要设置动态的路由，并且动态的发送get请求，获得各个详情页的API。首先动态路由的设置为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	path: &quot;topic/:id&quot;,</span><br><span class="line">	name: &apos;name&apos;,</span><br><span class="line">	component: topic</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>此处设置路由id可变，但最终指向组件都为topic，只要topic组件根据获得的不同id的API返回值渲染就可以获得不同的详情页。接下来就要设置动态的get请求。查阅资料后，发现axios的get请求可以设置参数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">axios.get(url,&#123;</span><br><span class="line">	params: &#123;</span><br><span class="line">      ID:12345</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>但这种做法axios会自动将URL与params拼接，URL/?ID=value,最终形成的url地址会有问号，与cnode提供的api地址形式并不一致。故尝试第二种方法，能否直接进行拼接？于是在date里新定义一个url变量，其值为this.$route.params.id.然后get函数的参数采用ES6语法拼接。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">axios.get(`https://cnodejs.org/api/v1/topic/$&#123;Url&#125;`)</span><br></pre></td></tr></table></figure>
+<p>运行后发现老是操作，错误提示为url未定义，然后一脸懵逼。尝试了将url定义在mounted函数下，将url定义为全局变量，都没有效果。最终才发现在使用data下的数据时，需要加上this.url.修改之后成功获取到了cnode详情页的数据。</p>
+<h4 id="2-moment格式化时间"><a href="#2-moment格式化时间" class="headerlink" title="2.moment格式化时间"></a>2.moment格式化时间</h4><p>首先安装moment，基操</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install moment --save</span><br></pre></td></tr></table></figure>
+<p>在main.js文件中引入moment。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import moment from &apos;moment&apos;</span><br></pre></td></tr></table></figure>
+<p>声明使用moment</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Vue.prototype.$moment = moment;</span><br></pre></td></tr></table></figure>
+<p>根据moment的规范进行格式化，此时可参考官方文档。</p>
+<p><a href="http://momentjs.cn/" target="_blank" rel="noopener">http://momentjs.cn/</a></p>
+<h4 id="3-markdown格式的渲染"><a href="#3-markdown格式的渲染" class="headerlink" title="3.markdown格式的渲染"></a>3.markdown格式的渲染</h4><p>在通过Api获取的文章详情页中，其content内容是markdown格式的，如果不进行渲染直接输出，所有标签会直接显示。寻找之后发现v-html标签可以直接解决这个问题，只要将其与所获得的数据绑定即可自行渲染。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;context&quot; v-html=&quot;top.data.content &quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>踩了一天坑之后，发现，百度是真滴捞，谷歌其实也不咋的，官方文档才是真的好东西。</p>
+<p align="right">4/4/2019 9:18:59 PM </p></blockquote>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/2019/">#2019</a> <a href="/tags/vue/">#vue</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
 </div>
-            
         </section>
+
     </div>
 </div>
+
 
 </div>
 

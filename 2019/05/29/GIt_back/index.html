@@ -10,6 +10,8 @@
 
     <!--Description-->
     
+        <meta name="description" content="在vs code 2010中使用Git进行版本控制时，遇到需要将版本回退到某一个固定的版本的问题。">
+    
 
     <!--Author-->
     
@@ -18,7 +20,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Space"/>
+        <meta property="og:title" content="Git版本回退问题"/>
     
 
     <!--Open Graph Description-->
@@ -29,7 +31,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -40,7 +42,7 @@
 
     <!-- Title -->
     
-    <title>Blog - Space</title>
+    <title>Git版本回退问题 - Space</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
@@ -127,9 +129,7 @@
 <div class="container">
 
     <!-- Main Content -->
-    
-
-<div class="row">
+    <div class="row">
     <div class="col-sm-12">
 
         <!--Title and Logo-->
@@ -137,25 +137,61 @@
     <div class="logo">
         <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
         
-            <h1 id="main-title" class="title">Blog</h1>
-        
     </div>
 </header>
 
-        <section class="main archive-container">
+        <section class="main">
             
-                <div class="archive-post">
-    <a href="/2018/02/05/ssh-config/">
-        <span class="archive-date">
-            Feb 2018
-        </span>
-        利用ssh将本地项目部署至github
-    </a>
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/2019/05/29/GIt_back/">
+                Git版本回退问题
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2019-05-29</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/categories/Git/">Git</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <p>在vs code 2010中使用Git进行版本控制时，遇到需要将版本回退到某一个固定的版本的问题。<br><a id="more"></a></p>
+<h3 id="1-通过Git-log获取过往版本号的commit-ID"><a href="#1-通过Git-log获取过往版本号的commit-ID" class="headerlink" title="1.通过Git log获取过往版本号的commit ID"></a>1.通过Git log获取过往版本号的commit ID</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git log</span><br></pre></td></tr></table></figure>
+<h3 id="2-通过commit-ID恢复版本"><a href="#2-通过commit-ID恢复版本" class="headerlink" title="2.通过commit ID恢复版本"></a>2.通过commit ID恢复版本</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard Commit ID</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/Git/">#Git</a> <a href="/tags/2019/">#2019</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
 </div>
-            
         </section>
+
     </div>
 </div>
+
 
 </div>
 

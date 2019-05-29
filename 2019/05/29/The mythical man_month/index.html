@@ -10,6 +10,17 @@
 
     <!--Description-->
     
+        <meta name="description" content="人月神话Chapter 1 The Tar Pit1.职业的乐趣
+创造：创建事物的纯粹快乐
+他人使用自己的劳动成果的成就感
+将相互啮合的零部件组合到一起展现出的魔术般的力量
+学习，不断接触新事务的乐趣
+工作在纯粹的思考中
+
+2.职业的苦恼
+由别人提供设计的目标，依赖他人
+概念性设计后重复性的找bug">
+    
 
     <!--Author-->
     
@@ -18,7 +29,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Space"/>
+        <meta property="og:title" content="人月神话笔记"/>
     
 
     <!--Open Graph Description-->
@@ -29,7 +40,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -40,7 +51,7 @@
 
     <!-- Title -->
     
-    <title>Space</title>
+    <title>人月神话笔记 - Space</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
@@ -135,17 +146,14 @@
     <div class="logo">
         <a href="/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
         
-            <h1 id="main-title" class="title">Space</h1>
-        
     </div>
 </header>
 
         <section class="main">
             
-                
 <div class="post">
 
-    <div class="post-header index">
+    <div class="post-header">
         <h1 class="title">
             <a href="/2019/05/29/The mythical Man_Month/">
                 人月神话笔记
@@ -164,9 +172,13 @@
         </div>
     </div>
 
-    
-        <div class="content">
-            <h1 id="人月神话"><a href="#人月神话" class="headerlink" title="人月神话"></a>人月神话</h1><h2 id="Chapter-1-The-Tar-Pit"><a href="#Chapter-1-The-Tar-Pit" class="headerlink" title="Chapter 1 The Tar Pit"></a>Chapter 1 The Tar Pit</h2><h3 id="1-职业的乐趣"><a href="#1-职业的乐趣" class="headerlink" title="1.职业的乐趣"></a>1.职业的乐趣</h3><ul>
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <h1 id="人月神话"><a href="#人月神话" class="headerlink" title="人月神话"></a>人月神话</h1><h2 id="Chapter-1-The-Tar-Pit"><a href="#Chapter-1-The-Tar-Pit" class="headerlink" title="Chapter 1 The Tar Pit"></a>Chapter 1 The Tar Pit</h2><h3 id="1-职业的乐趣"><a href="#1-职业的乐趣" class="headerlink" title="1.职业的乐趣"></a>1.职业的乐趣</h3><ul>
 <li>创造：创建事物的纯粹快乐</li>
 <li>他人使用自己的劳动成果的成就感</li>
 <li>将相互啮合的零部件组合到一起展现出的魔术般的力量</li>
@@ -356,446 +368,25 @@
 <p></p><p align="right">4/20/2019 10:51:17 AM </p><p></p>
 <hr>
 
-        </div>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2019/05/29/IO/">
-                点餐系统数据需求
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-05-29</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/work/">work</a>
-                </span>
-            
-        </div>
     </div>
 
     
-        <div class="content">
-            <h2 id="点餐系统点菜界面数据需求"><a href="#点餐系统点菜界面数据需求" class="headerlink" title="点餐系统点菜界面数据需求"></a>点餐系统点菜界面数据需求</h2><h3 id="1-基础数据"><a href="#1-基础数据" class="headerlink" title="1.基础数据"></a>1.基础数据</h3><p>菜品数据：</p>
-<ul>
-<li>ID</li>
-<li>name (菜名) </li>
-<li>price (价格)          </li>
-<li>src (图片)</li>
-<li>introduction (简介)</li>
-<li>ingredients (材料清单)</li>
-<li>comment (用户评价)</li>
-<li>star (点赞数)</li>
-<li><p>sales (成交数据)</p>
-</li>
-<li><p>discount (促销折扣)</p>
-</li>
-<li>class（分类）</li>
-</ul>
-<p>用户数据：</p>
-<ul>
-<li>tableID (桌号)</li>
-</ul>
-<p>后厨数据：</p>
-<ul>
-<li>status (订单状态)   【等待烹饪，烹饪中，正在配送】<blockquote>
-<p>与菜单点菜功能无关的数据先不使用。</p>
-</blockquote>
-</li>
-</ul>
-<hr>
-<h3 id="2-各部分功能需求"><a href="#2-各部分功能需求" class="headerlink" title="2.各部分功能需求"></a>2.各部分功能需求</h3><h4 id="2-1-点菜加入购物车"><a href="#2-1-点菜加入购物车" class="headerlink" title="2.1 点菜加入购物车"></a>2.1 点菜加入购物车</h4><p><strong>需求数据：</strong></p>
-<ul>
-<li>ID</li>
-<li>name</li>
-<li>price</li>
-<li>count（当前数量）</li>
-<li>Sumprice（总价）</li>
-<li>discount</li>
-</ul>
-<p><strong>功能描述：</strong></p>
-<ul>
-<li>点击添加按钮后在购物车显示【name】【price】【count+1】 并更新【Sumprice】</li>
-<li><p>点击删除按钮后【count-1】,更新【总价】</p>
-<blockquote>
-<p>只有当（count &gt; 0 ）时删除操作才可执行</p>
-<p>(count == 0) 清除购物车内该菜品条目</p>
-<p>(count == 0) 时点击删除按钮，弹出报错提示 </p>
-</blockquote>
-</li>
-<li><p>加入菜单后，各菜品的数量可以自由调整，即更新【count】</p>
-</li>
-<li>【Sumprice】计算时需要考虑折扣，Sumprice = price * discount</li>
-</ul>
-<p><strong>该功能提供【ID，name】，希望获得【price, count,Sumprice】</strong></p>
-<hr>
-<h4 id="2-2-菜单展示–推荐位"><a href="#2-2-菜单展示–推荐位" class="headerlink" title="2.2 菜单展示–推荐位"></a>2.2 菜单展示–推荐位</h4><p><strong>需求数据：</strong></p>
-<ul>
-<li>star</li>
-</ul>
-<p><strong>功能描述：</strong></p>
-<ul>
-<li>每次展示菜单的时候，自动将star最高的两项展示在菜单顶部</li>
-<li>顾客可以点击按钮【star+1】，再次点击【star-1】，单个用户只能点赞一次，最终菜单界面显示的是点赞总数。</li>
-</ul>
-<p><strong>该功能需要收集各菜的star数据，并且根据各菜品的star排序。实时获取前两位展示。</strong></p>
-<hr>
-<h4 id="2-3-菜单展示–侧边栏"><a href="#2-3-菜单展示–侧边栏" class="headerlink" title="2.3 菜单展示–侧边栏"></a>2.3 菜单展示–侧边栏</h4><p><strong>需求数据：</strong></p>
-<ul>
-<li>class</li>
-<li>star</li>
-<li>sales</li>
-<li>discout</li>
-</ul>
-<p><strong>功能描述：</strong></p>
-<ul>
-<li>根据【class】对菜品分类，通过侧边栏tag的切换展示不同种类的菜。</li>
-<li>侧边栏除了class分类之外，加上【推荐】【促销】</li>
-<li>【推荐】:分别取【star】【sales】前三进行展示</li>
-<li>【促销】:将【discount】不是1的的菜放入此类，并加上促销标记。</li>
-</ul>
-<p><strong>该功能需要在用户操作时候，收集需求的数据，展示需求同 2.2</strong></p>
-<hr>
-<h4 id="2-4-菜品详情页"><a href="#2-4-菜品详情页" class="headerlink" title="2.4 菜品详情页"></a>2.4 菜品详情页</h4><p><strong>需求数据：</strong></p>
-<ul>
-<li>ID</li>
-<li>src</li>
-<li>price</li>
-<li>name</li>
-<li>introduction</li>
-<li>ingredients</li>
-<li>comment</li>
-<li>sales</li>
-<li>star</li>
-<li>discount</li>
-</ul>
-<p><strong>功能描述：</strong></p>
-<ul>
-<li>在用户点击菜单上单个菜品图片时进入详情页</li>
-<li>详情页向用户展示更为具体的信息，用户点击时通过调取点击时card的数据，自动生成详情页。</li>
-<li>详情页也具备点菜的功能，即【2.1的所有功能。】</li>
-<li>在详情页，用户可以进行评论，评论需存入数据库</li>
-</ul>
-<p><strong>该功能在详情页每次创建时需要调用所有上述需求数据，并且在之后对用户的【star】，【comment】进行存储。</strong></p>
-<hr>
-<h4 id="2-5-支付"><a href="#2-5-支付" class="headerlink" title="2.5 支付"></a>2.5 支付</h4><p><strong>需求数据：</strong></p>
-<ul>
-<li>tableID</li>
-<li>Sumpice</li>
-<li>price</li>
-<li>name</li>
-<li>count</li>
-<li>sales</li>
-</ul>
-<p><strong>功能描述：</strong></p>
-<ul>
-<li>在用户点击结账按钮后，弹出账单一览，包括详细条目和总价。此处数据可以用购物车的接口，除了展示形式，内容基本一致。</li>
-<li>在用户确认支付成功之后，菜单内所有菜的【sales += count】</li>
-</ul>
-<p><strong>该功能使用时，基本可以复用购物车数据，主要操作为【sales】的更新</strong></p>
-<hr>
-<h4 id="2-6-用户菜单界面"><a href="#2-6-用户菜单界面" class="headerlink" title="2.6 用户菜单界面"></a>2.6 用户菜单界面</h4><p><strong>需求数据：</strong></p>
-<ul>
-<li>ID</li>
-<li>name</li>
-<li>price</li>
-<li>count（当前数量）</li>
-<li>Sumprice（总价）</li>
-<li>discount</li>
-<li>status</li>
-</ul>
-<p><strong>功能描述：</strong></p>
-<ul>
-<li>用户可在此处查看自己的完整菜单</li>
-<li>点击单个菜品，可以查看菜品【status】</li>
-<li>可以对菜单进行调整，如要加菜，数据需求与2.1一致</li>
-<li>要删除某个菜，需要根据【status】，若已经在烹饪或者配送途中无法进行此操作</li>
-</ul>
-<p><strong>需要获取status的值，展示所点菜的当前进度。</strong></p>
-<hr>
 
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/tags/2019/">#2019</a> <a href="/tags/read/">#read</a>
         </div>
+    
+
+    <!-- Comments -->
     
 
 </div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2019/05/29/GIt_back/">
-                Git版本回退问题
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-05-29</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/Git/">Git</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <p>在vs code 2010中使用Git进行版本控制时，遇到需要将版本回退到某一个固定的版本的问题。<br>
-        </div>
-        <a href="/2019/05/29/GIt_back/" class="read-more">Read More</a>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2019/05/29/vue-cli6/">
-                Vue学习笔记（六）--vuetify Quick Start
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-05-29</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/vue/">vue</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <p><strong>简介：</strong> 之前简单记录过新建项目如何使用vuetify，本次根据官方文档，进行详细的记录。<br>
-        </div>
-        <a href="/2019/05/29/vue-cli6/" class="read-more">Read More</a>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2019/04/04/vue-cli5/">
-                Vue学习笔记（五）--this！
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-04-04</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/vue/">vue</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <h3 id="简介："><a href="#简介：" class="headerlink" title="简介："></a>简介：</h3><p>this踩坑3h，再次记录一些vue的一些细节问题。<br>
-        </div>
-        <a href="/2019/04/04/vue-cli5/" class="read-more">Read More</a>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2019/04/03/vue-cli4/">
-                Vue学习笔记（四）---API的调用
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-04-03</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/vue/">vue</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <h3 id="简介："><a href="#简介：" class="headerlink" title="简介："></a>简介：</h3><p>通过查看vue官方文档，尝试调用cnode的社区的api重构社区。<br>
-        </div>
-        <a href="/2019/04/03/vue-cli4/" class="read-more">Read More</a>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2019/04/02/vue-cli2/">
-                Vue学习笔记（二）--引入vuetify
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-04-02</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/vue/">vue</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <h3 id="简介："><a href="#简介：" class="headerlink" title="简介："></a>简介：</h3><p>记录一些使用vue-cli构建项目后利用vuetify的组件编写页面时遇到的问题。<br>
-        </div>
-        <a href="/2019/04/02/vue-cli2/" class="read-more">Read More</a>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2019/04/02/vue-cli3/">
-                Vue学习笔记（三）--路由问题
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-04-02</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/vue/">vue</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <h3 id="简介："><a href="#简介：" class="headerlink" title="简介："></a>简介：</h3><p>在使用vue-router的过程中，发现点击跳转按钮路由无反应，经过研究发现是因为<router-view>标签的问题<br>
-        </div>
-        <a href="/2019/04/02/vue-cli3/" class="read-more">Read More</a>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2019/03/31/vue-cli1/">
-                Vue学习笔记（一）-- vue-cli构建项目脚手架
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-03-31</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/vue/">vue</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <h3 id="简介："><a href="#简介：" class="headerlink" title="简介："></a>简介：</h3><p>初学Vue利用vue-cli 和webpack构建项目脚手架。<br>
-        </div>
-        <a href="/2019/03/31/vue-cli1/" class="read-more">Read More</a>
-    
-
-</div>
-            
-                
-<div class="post">
-
-    <div class="post-header index">
-        <h1 class="title">
-            <a href="/2019/03/19/plantUML/">
-                Win10系统下vs code安装plantUML插件
-            </a>
-        </h1>
-        <div class="post-info">
-            
-                <span class="date">2019-03-19</span>
-            
-            
-            
-                <span class="category">
-                    <a href="/categories/work/">work</a>
-                </span>
-            
-        </div>
-    </div>
-
-    
-        <div class="content">
-            <p>简介：因为环境变量的问题安装plantUML出现了一点问题，在此记录。<br>
-        </div>
-        <a href="/2019/03/19/plantUML/" class="read-more">Read More</a>
-    
-
-</div>
-            
         </section>
+
     </div>
 </div>
-
-
-
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="wrap-pagination">
-                <a class="disabled" href="/">
-                    <i class="fa fa-chevron-left" aria-hidden="true"></i>
-                </a>
-                <a class="" href="/page/2/">
-                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-
-
 
 
 </div>
